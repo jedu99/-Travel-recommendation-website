@@ -1,0 +1,109 @@
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      background: #f3f8fb url("../image/shanghai-background.png") center / cover no-repeat;
+    }
+
+    .navbar {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 24px;
+      padding: 22px 6%;
+      background: #fff;
+      box-shadow: 0 2px 12px rgb(0 0 0 / 8%);
+    }
+
+    .logo {
+      justify-self: start;
+      color: #173b4c;
+      font-size: 26px;
+      font-weight: 800;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .logo img {
+      display: block;
+      width: 150px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #334b57;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #087f8c;
+    }
+
+    .search-form {
+      justify-self: end;
+    }
+
+    .search-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border: none;
+      border-radius: 24px;
+      background: #087f8c;
+      color: #fff;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .search-button:hover {
+      background: #066672;
+    }
+
+    .navbar a:focus-visible,
+    .search-button:focus-visible {
+      outline: 3px solid #d78100;
+      outline-offset: 5px;
+    }
+
+    @media (max-width: 640px) {
+      .navbar {
+        grid-template-columns: 1fr auto;
+        gap: 22px;
+        padding: 20px;
+      }
+
+      .nav-links {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 24px;
+      }
+
+      .logo {
+        font-size: 22px;
+      }
+
+      .search-button {
+        padding: 10px 16px;
+      }
+    }
