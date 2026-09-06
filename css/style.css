@@ -100,6 +100,41 @@
       outline-offset: 5px;
     }
 
+    .page-content {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: start;
+      gap: clamp(8px, 3vw, 48px);
+      padding-right: 6%;
+      padding-bottom: 40px;
+    }
+
+    .hero {
+      max-width: 720px;
+      margin-top: 40px;
+      padding: clamp(20px, 4vw, 48px);
+      border-radius: 24px;
+      background: transparent;
+      color: #fff;
+    }
+
+    .hero h1 {
+      margin-bottom: 24px;
+      font-size: clamp(28px, 4.5vw, 64px);
+      line-height: 1.1;
+      overflow-wrap: break-word;
+    }
+
+    .hero p {
+      font-size: clamp(16px, 1.5vw, 19px);
+      line-height: 1.7;
+    }
+
+    .book-button {
+      margin-top: 24px;
+      padding: 14px 32px;
+    }
+
     .social-sidebar {
       position: sticky;
       top: 100px;
