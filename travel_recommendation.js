@@ -1,12 +1,12 @@
 function searchCondition(event) {
-    event.preventDefault();
+    event?.preventDefault();
 
     const input = document.getElementById('conditionInput')
         .value.trim().toLowerCase();
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = '';
 
-    fetch('travel_recommendation_api.json')
+    return fetch('travel_recommendation_api.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Unable to fetch travel data.');
@@ -62,3 +62,13 @@ function searchCondition(event) {
 
 document.querySelector('.search-form')
     .addEventListener('submit', searchCondition);
+
+document.querySelector('.search-form').addEventListener('reset', () => {
+    document.getElementById('result').innerHTML = '';
+});
+
+const query = new URLSearchParams(window.location.search).get('q');
+if (query) {
+    document.getElementById('conditionInput').value = query;
+    searchCondition();
+}
