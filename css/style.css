@@ -273,6 +273,106 @@
       }
     }
 
+    /* Search results: fluid cards using the existing generated markup. */
+    #result {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+      gap: clamp(16px, 2.5vw, 28px);
+      width: min(1200px, 88%);
+      margin: 0 auto clamp(32px, 6vw, 80px);
+      padding: clamp(16px, 2.5vw, 28px);
+      border: 1px solid rgb(255 255 255 / 65%);
+      border-radius: 28px;
+      background: #eef6f8;
+      box-shadow: 0 16px 48px rgb(10 38 52 / 20%);
+      color: #173b4c;
+      font-size: 17px;
+      line-height: 1.6;
+      overflow-wrap: anywhere;
+    }
+
+    #result:empty {
+      display: none;
+    }
+
+    #result > article {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid #dce9ee;
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: 0 4px 16px rgb(23 59 76 / 7%);
+      transition: transform 0.25s ease, box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    #result > article > img {
+      order: -1;
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      background: #dce9ee;
+    }
+
+    #result > article > h2 {
+      margin: 0;
+      padding: 24px 24px 12px;
+      color: #173b4c;
+      font-size: clamp(21px, 2vw, 27px);
+      line-height: 1.25;
+      letter-spacing: -0.025em;
+    }
+
+    #result > article > h2::after {
+      content: "";
+      display: block;
+      width: 36px;
+      height: 3px;
+      margin-top: 14px;
+      border-radius: 2px;
+      background: #087f8c;
+    }
+
+    #result > article > p {
+      margin: 0;
+      padding: 0 24px 28px;
+      color: #4c626e;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+      #result > article:hover {
+        transform: translateY(-4px);
+        border-color: #8fc4ca;
+        box-shadow: 0 12px 28px rgb(23 59 76 / 14%);
+      }
+    }
+
+    @media (max-width: 600px) {
+      #result {
+        grid-template-columns: minmax(0, 1fr);
+        width: calc(100% - 32px);
+        padding: 12px;
+        border-radius: 22px;
+      }
+
+      #result > article {
+        border-radius: 14px;
+      }
+
+      #result > article > h2 {
+        padding: 20px 20px 12px;
+      }
+
+      #result > article > p {
+        padding: 0 20px 24px;
+      }
+    }
+
     .book-button {
       margin-top: 24px;
       padding: 14px 32px;
